@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import Card from "./Card";
 export default class Allbeers extends Component {
   state = {
     beers: []
@@ -20,12 +20,7 @@ export default class Allbeers extends Component {
         {this.state.beers.map((aBeer, index) => {
           return (
             <div key={`${aBeer._id}`}>
-              <img
-                src={aBeer.image_url}
-                alt={aBeer.name}
-                style={{ width: "50px" }}
-              />
-              <h1>{aBeer.name}</h1>
+              <Card aBeer={aBeer}/>
             </div>
           );
         })}
