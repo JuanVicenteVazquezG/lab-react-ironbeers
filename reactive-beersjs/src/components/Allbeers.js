@@ -24,7 +24,6 @@ export default class Allbeers extends Component {
             </div>
           );
         })}
-        {console.log(this.state.beers)}
       </div>
     );
   }
