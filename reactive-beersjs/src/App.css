@@ -1,23 +1,96 @@
+body {
+  background: rgb(221, 217, 217);
+}
+
 .App {
-  orientation:portrait;
+  /* orientation:portrait; */
   text-align: center;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
+  margin: 10px;
   min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+}
+
+.home {
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.home-card {
+  margin: 5px;
+}
+.home-link {
+  background-color: rgb(165, 165, 165);
+}
+
+.home-link svg {
   color: white;
+}
+.home-card h2 {
+  text-align: left;
+  margin: 10px 0;
+}
+
+.home-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.home-card p {
+  font-size: 0.8rem;
+  text-align: left;
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+a,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+.beer-card{
+  margin:10px;
+  border:1px solid black ;
+  border-radius:10px;
+}
+
+.beer-card h1{
+  text-align:left;
+  margin:5px;
+}
+
+.beer-card img{
+  display:inline-block;
+  width:128px;
+}
+
+.beer-card h3{
+  width:100%;
+}
+
+
+@media (min-width: 600px) {
+  
+.container {
+  margin: 10px;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+}
+  .home {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
 }

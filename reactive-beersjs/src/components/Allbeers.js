@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Card from "./Card";
 import NavBar from "./NavBar";
+
+
 export default class Allbeers extends Component {
   state = {
     beers: []
@@ -17,7 +19,7 @@ export default class Allbeers extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <NavBar/>
         {this.state.beers.map((aBeer, index) => {
           return (

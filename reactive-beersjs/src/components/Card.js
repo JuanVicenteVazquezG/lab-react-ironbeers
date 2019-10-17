@@ -9,11 +9,13 @@ export default class Allbeers extends Component {
   render() {
     const { aBeer } = this.props;
     return (
-      <div>
+      <div className="beer-card">
         <Link to={`/beers/${aBeer._id}`}>
         <h1>{aBeer.name}</h1>
-        <img src={aBeer.image_url} alt={aBeer.name} style={{ width: "50px" }} />
+        <img src={aBeer.image_url} alt={aBeer.name} style={{ width: "35px" }} />
+        <div className="h3 title">
         <h3>{aBeer.tagline}</h3>
+        </div>
         <p>{aBeer.contributed_by}</p>
         </Link>
       </div>
