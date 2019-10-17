@@ -12,6 +12,7 @@ body {
   margin: 10px;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
+  
 }
 
 .home {
@@ -31,8 +32,12 @@ body {
 
 .home-link svg {
   color: white;
+  }
+
+.home-card{
+  box-shadow: 2px 2px 5px #999;;
 }
-.home-card h2 {
+  .home-card h2 {
   text-align: left;
   margin: 10px 0;
 }

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Card from "./Card";
 import NavBar from "./NavBar";
-
+import beerComunicator  from "../helper/BeerComunicator";
 
 export default class Allbeers extends Component {
   state = {
@@ -11,20 +10,19 @@ export default class Allbeers extends Component {
 
   async componentDidMount() {
     try {
-      const beers = await axios.get("https://ih-beer-api.herokuapp.com/beers/");
+      const beers = await beerComunicator.getAllBeers();
       this.setState({ beers: [...beers.data] });
-      console.log(beers.data)
     } catch (error) {}
   }
 
   render() {
     return (
       <div className="container">
-        <NavBar/>
+        <NavBar />
         {this.state.beers.map((aBeer, index) => {
           return (
             <div key={`${aBeer._id}`}>
-              <Card aBeer={aBeer}/>
+              <Card aBeer={aBeer} />
             </div>
           );
         })}
