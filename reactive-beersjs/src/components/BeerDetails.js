@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import NavBar from "./NavBar";
 
 export default class BeerDetails extends Component {
   state = {
@@ -21,6 +22,7 @@ export default class BeerDetails extends Component {
     const { Beer } = this.state;
     return (
       <div>
+        <NavBar/>
         <h2>{Beer.name}</h2>
         <img src={Beer.image} alt={Beer.name} />
         <p>{Beer.tagline}</p>

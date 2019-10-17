@@ -18,7 +18,7 @@ export default class Home extends Component {
       </h4>
       
       <img src="/images/RandomBeers.png" alt="Random beers" />
-      <Link to="/random-beer">
+      <Link to="/beers/random-beer">
         <h2>Random Beers</h2>
       </Link>
       <h4>
