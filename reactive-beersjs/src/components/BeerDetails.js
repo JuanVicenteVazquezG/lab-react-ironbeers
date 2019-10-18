@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import NavBar from "./NavBar";
+import beerComunicator from "../helper/BeerComunicator";
 
 export default class BeerDetails extends Component {
   state = {
@@ -8,12 +8,9 @@ export default class BeerDetails extends Component {
   };
 
   async componentDidMount() {
-    
     const { beerId } = this.props.match.params;
     try {
-      const beer = await axios.get(
-        `https://ih-beer-api.herokuapp.com/beers/${beerId}`
-      );
+      const beer = await beerComunicator.getBeer(beerId);
       this.setState({ Beer: { ...beer.data } });
     } catch (error) {}
   }
@@ -22,7 +19,7 @@ export default class BeerDetails extends Component {
     const { Beer } = this.state;
     return (
       <div>
-        <NavBar/>
+        <NavBar />
         <h2>{Beer.name}</h2>
         <img src={Beer.image} alt={Beer.name} />
         <p>{Beer.tagline}</p>

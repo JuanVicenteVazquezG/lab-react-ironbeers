@@ -21,7 +21,8 @@ class BeerComunicator {
   }
 
   newBeer(beer) {
-    return this.beer.post("/new", beer).then(response => response);
+   return this.beerCom.post("/new", beer)
+    .then(response => {return response.data});
   }
 }
 

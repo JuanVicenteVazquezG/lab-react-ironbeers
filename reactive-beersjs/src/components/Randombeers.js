@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import NavBar from "./NavBar";
+import beerComunicator from "../helper/BeerComunicator";
 
 export default class Randombeers extends Component {
   state = {
@@ -8,17 +8,15 @@ export default class Randombeers extends Component {
   };
   async componentDidMount() {
     try {
-      const beer = await axios.get(
-        "https://ih-beer-api.herokuapp.com/beers/random"
-      );
-this.setState({ Beer: { ...beer.data } });
+      const beer = await beerComunicator.Randombeers();
+      this.setState({ Beer: { ...beer.data } });
     } catch (error) {}
   }
   render() {
     const { Beer } = this.state;
     return (
       <div>
-        <NavBar/>
+        <NavBar />
         <h2>{Beer.name}</h2>
         <img src={Beer.image} alt={Beer.name} />
         <p>{Beer.tagline}</p>

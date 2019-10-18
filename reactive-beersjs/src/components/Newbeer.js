@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Axios from "axios";
 import NavBar from "./NavBar";
+import beerComunicator from "../helper/BeerComunicator";
 
 export default class Newbeer extends Component {
   state = {
@@ -16,17 +16,13 @@ export default class Newbeer extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = e =>{
+  handleSubmit = e => {
     e.preventDefault();
-    if (this.state.name !== ""){
-       let beer = JSON.parse(JSON.stringify(this.state))
-       Axios.post ('https://ironbeer-api.herokuapp.com/beers/new',beer)
-       .then(response=>{ console.log(response)})
-       .catch(err=>{
-         console.log(err);
-       });
+    if (this.state.name !== "") {
+      let beer = JSON.parse(JSON.stringify(this.state));
+      console.log(beerComunicator.newBeer(beer));
     }
-  }
+  };
 
   render() {
     const {
@@ -40,7 +36,7 @@ export default class Newbeer extends Component {
     } = this.state;
     return (
       <div>
-       <NavBar/>
+        <NavBar />
         <h1>New beer</h1>{" "}
         <form onSubmit={this.handleSubmit}>
           <div>
