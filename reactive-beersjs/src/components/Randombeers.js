@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
-import beerComunicator from "../helper/BeerComunicator";
+import BeerService from "../helper/BeerService";
 
 export default class Randombeers extends Component {
   state = {
@@ -8,8 +8,10 @@ export default class Randombeers extends Component {
   };
   async componentDidMount() {
     try {
-      const beer = await beerComunicator.Randombeers();
-      this.setState({ Beer: { ...beer.data } });
+      console.log('hola')
+      const beer = await BeerService.getRandomBeer();
+      console.log(beer);
+      this.setState({ Beer: beer });
     } catch (error) {}
   }
   render() {

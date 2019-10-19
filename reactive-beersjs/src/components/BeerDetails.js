@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
-import beerComunicator from "../helper/BeerComunicator";
+import BeerService from "../helper/BeerService";
 
 export default class BeerDetails extends Component {
   state = {
@@ -10,8 +10,8 @@ export default class BeerDetails extends Component {
   async componentDidMount() {
     const { beerId } = this.props.match.params;
     try {
-      const beer = await beerComunicator.getBeer(beerId);
-      this.setState({ Beer: { ...beer.data } });
+      const beer = await BeerService.getBeer(beerId);
+      this.setState({ Beer: { ...beer } });
     } catch (error) {}
   }
 

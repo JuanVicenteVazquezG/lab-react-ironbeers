@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Card from "./Card";
 import NavBar from "./NavBar";
-import beerComunicator  from "../helper/BeerComunicator";
+import BeerService from "../helper/BeerService";
 
 export default class Allbeers extends Component {
   state = {
@@ -10,8 +10,8 @@ export default class Allbeers extends Component {
 
   async componentDidMount() {
     try {
-      const beers = await beerComunicator.getAllBeers();
-      this.setState({ beers: [...beers.data] });
+      const beers = await BeerService.getAllBeers();
+      this.setState({ beers: [...beers] });
     } catch (error) {}
   }
 
@@ -21,7 +21,7 @@ export default class Allbeers extends Component {
         <NavBar />
         {this.state.beers.map((aBeer, index) => {
           return (
-            <div key={`${aBeer._id}`}>
+            <div key={`${aBeer._id}-${index}`}>
               <Card aBeer={aBeer} />
             </div>
           );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
-import beerComunicator from "../helper/BeerComunicator";
+import BeerService from "../helper/BeerService";
 
 export default class Newbeer extends Component {
   state = {
@@ -20,7 +20,7 @@ export default class Newbeer extends Component {
     e.preventDefault();
     if (this.state.name !== "") {
       let beer = JSON.parse(JSON.stringify(this.state));
-      console.log(beerComunicator.newBeer(beer));
+      console.log(BeerService.newBeer(beer));
     }
   };
 

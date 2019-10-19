@@ -27,7 +27,7 @@ export default class Home extends Component {
 
         <div  className="home-card">
           <img src="/images/RandomBeers.png" alt="Random beers" />
-          <Link to="/beers/random-beer" title="A random beer information">
+          <Link to="/beers/random" title="A random beer information">
             <h2>Random Beers</h2>
           </Link>
           <p>
